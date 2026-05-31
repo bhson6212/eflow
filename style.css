@@ -527,3 +527,70 @@ html { overflow-x: hidden; }
 /* 메인 배너 타이틀 크기 (42 -> 48) */
 .hero-copy h1 { font-size: 48px; }
 @media (max-width: 640px) { .hero-copy h1 { font-size: 32px; } }
+
+
+/* === 모바일 햄버거 메뉴 === */
+.nav-toggle, .nav-close { display: none; }
+.nav-toggle {
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .header-inner { flex-direction: row; align-items: center; }
+  .nav-toggle { display: inline-flex; }
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 2px;
+    padding: 72px 20px 40px;
+    background: var(--white);
+    overflow-y: auto;
+    font-size: 18px;
+  }
+  body.menu-open .nav { display: flex; }
+  body.menu-open { overflow: hidden; }
+  .nav-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav > a, .nav-item > a {
+    width: 100%;
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--soft);
+  }
+  .nav-item { width: 100%; flex-direction: column; align-items: stretch; }
+  .submenu {
+    position: static;
+    display: block;
+    min-width: 0;
+    padding: 4px 0 10px 16px;
+    border: 0;
+    box-shadow: none;
+  }
+  .submenu a { font-size: 16px; padding: 11px 10px; }
+  .nav .buy { margin-top: 14px; text-align: center; justify-content: center; }
+}

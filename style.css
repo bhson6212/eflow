@@ -423,3 +423,56 @@ p {
 @media (max-width: 640px) {
   .brand-logo { height: 20px; }
 }
+
+
+/* === 풀폭 히어로 (이미지 풀블리드 + 다크 스크림 + 흰 카피 오버레이) === */
+html { overflow-x: hidden; }
+.hero {
+  position: relative;
+  margin: -42px calc(50% - 50vw) 0;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--soft); /* 이미지 영역 자리(플레이스홀더) */
+  border-bottom: 1px solid var(--line);
+}
+.hero::before { /* 다크 스크림 */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20,20,20,.78) 0%, rgba(20,20,20,.46) 55%, rgba(20,20,20,.22) 100%);
+}
+.hero-note { /* 와이어프레임용 이미지 영역 라벨 */
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  z-index: 2;
+  color: rgba(255,255,255,.7);
+  font-size: 12px;
+}
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 76px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  color: #fff;
+}
+.hero-copy .eyebrow { color: rgba(255,255,255,.78); }
+.hero-copy h1 { color: #fff; }
+.hero-copy .lead { color: rgba(255,255,255,.92); max-width: 620px; }
+.hero-copy p { color: rgba(255,255,255,.9); }
+.hero-copy strong { color: #fff; }
+.hero-copy .button { background: transparent; border-color: #fff; color: #fff; }
+.hero-copy .button.primary { background: #fff; border-color: #fff; color: var(--ink); }
+.hero-copy .button.secondary { border-color: rgba(255,255,255,.7); color: #fff; }
+@media (max-width: 640px) {
+  .hero { margin-top: -30px; min-height: 380px; }
+  .hero-copy { padding: 48px 16px; }
+}

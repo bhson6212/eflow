@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>EFLOW 이메일 서명 - Kim Juyong (Staff)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    padding: 32px;
+    background: #f2f4f7;
+    margin: 0;
+    color: #333;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+  .card {
+    background: white;
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(13, 21, 84, 0.06);
+  }
+  .card h2 { color: #0D1554; margin: 0 0 14px; font-size: 17px; font-weight: 700; }
+  .card ol { line-height: 1.85; margin: 8px 0 0; padding-left: 20px; font-size: 14px; color: #333; }
+  .tip {
+    margin-top: 14px; padding: 12px 16px;
+    background: #eff3ff; border-left: 3px solid #194FFF;
+    font-size: 13px; color: #0D1554; border-radius: 4px;
+    line-height: 1.6;
+  }
+  .tip.warn { background: #fef7e6; border-left-color: #f5b83b; color: #6b4c0f; }
+  .label {
+    display: inline-block;
+    background: #0D1554; color: white;
+    padding: 5px 12px; border-radius: 4px;
+    font-size: 12px; margin-bottom: 16px;
+    font-weight: 700; letter-spacing: 0.3px;
+  }
+  .sig-stage {
+    background: white; padding: 32px;
+    border: 2px dashed #c7d0dc; border-radius: 8px;
+    overflow-x: auto;
+  }
+  .palette { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
+  .swatch { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+  .swatch .chip { width: 32px; height: 32px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch code { font-size: 12px; color: #555; }
+  code { background: #eff1f5; padding: 1px 6px; border-radius: 3px; font-family: 'JetBrains Mono', Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="card">
+    <h2>📧 Gmail 서명 등록 방법</h2>
+    <ol>
+      <li>아래 점선 박스 안의 서명을 마우스로 드래그 → 전부 선택 후 <strong>복사 (Ctrl+C / ⌘+C)</strong></li>
+      <li>Gmail ⚙️ → <strong>모든 설정 보기</strong> → <strong>기본설정</strong> 탭 → <strong>서명</strong> 섹션</li>
+      <li><strong>+ 새로 만들기</strong> → 서명 이름 지정 (예: "Kim Juyong / Staff")</li>
+      <li>편집창에 <strong>붙여넣기 (Ctrl+V / ⌘+V)</strong></li>
+      <li>아래 <strong>서명 기본값</strong>에서 신규 메일용 / 답장 · 전달용에 지정</li>
+      <li>페이지 최하단 <strong>변경사항 저장</strong></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <span class="label" style="background:#0D1554;">↓ 서명 복사 영역 ↓</span>
+    <div class="sig-stage">
+<!-- ============ SIGNATURE A START ============ -->
+<table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; font-size:12px; color:#555; border-collapse:separate; border-spacing:0; line-height:1.5; border:1px solid #c5cbd6; border-radius:4px; background-color:#ffffff; color-scheme:light only;">
+  <tr>
+    <!-- Col 1: Logo + Tagline -->
+    <td bgcolor="#ffffff" width="170" style="padding:20px 16px; vertical-align:middle; border-right:1px solid #dde1ea; white-space:nowrap; text-align:center; background:linear-gradient(135deg, #edf1f9 0%, #f7f9fd 40%, #ffffff 75%); border-radius:4px 0 0 4px; background-color:#ffffff;">
+      <img src="https://bhson6212.github.io/eflow/eflow-logo.png" alt="EFLOW" width="125" height="22" style="display:block; margin:0 auto; border:0;"/>
+      <div style="margin-top:8px; color:#0D1554; font-size:11px; font-weight:600; line-height:1.5; text-align:center;">Axial Flux.<br>A Much Bigger Future.</div>
+    </td>
+
+    <!-- Col 2: All Info (Name + Contact + Address) -->
+    <td bgcolor="#ffffff" style="padding:20px 28px; vertical-align:middle; white-space:nowrap; background-color:#ffffff;">
+      <!-- Name -->
+      <div style="font-size:19px; font-weight:700; color:#1a1a1a; letter-spacing:-0.2px;">
+        Kim Juyong<span style="color:#c5c9d1; font-weight:300; margin:0 9px;">/</span><span style="font-weight:600;">김주용</span>
+      </div>
+      <!-- Title -->
+      <div style="margin-top:5px; line-height:1.4;">
+        <span style="color:#0D1554; font-weight:700; font-size:12px; letter-spacing:0.5px;">Staff</span>
+        <span style="color:#212121; font-size:12px; margin-left:6px; font-weight:400;">Management &amp; Operations Team</span>
+      </div>
+      <!-- Divider -->
+      <div style="margin-top:10px; margin-bottom:10px; border-top:1px solid #eef0f4; width:100%;"></div>
+      <!-- Contact -->
+      <div style="font-size:13px;">
+        <span style="color:#194FFF; margin-right:8px; font-size:14px;">&#9742;</span><a href="tel:+821099916132" style="color:#212121; text-decoration:none; font-weight:400;">+82 10-9991-6132</a>
+      </div>
+      <div style="font-size:13px; margin-top:4px;">
+        <span style="color:#194FFF; margin-right:8px; font-size:19px;">&#9993;</span><a href="mailto:eflow.jy@gmail.com" style="color:#212121; text-decoration:none; font-weight:400;">eflow.jy@gmail.com</a>
+      </div>
+      <div style="font-size:13px; margin-top:4px;">
+        <span style="color:#194FFF; margin-right:8px; font-size:10px;">&#127760;</span><a href="https://www.eflow.kr" style="color:#212121; text-decoration:none; font-weight:400;">www.eflow.kr</a>
+      </div>
+      <!-- Address (one line) -->
+      <div style="color:#212121; font-size:11px; margin-top:10px;">
+        51542 #116, 10 Jeongiui-gil, Seongsan-gu, Changwon-si
+      </div>
+    </td>
+  </tr>
+</table>
+<!-- ============ SIGNATURE A END ============ -->
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>이플로우 판매 사이트 · 디자인 스타일 후보 비교</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--latin:'Satoshi';--ko:'Pretendard';--ink:#1f1f1f;--mut:#666;--line:#d8d8d8;--link:#2b50d8;}
+body{font-family:var(--latin),var(--ko),system-ui,sans-serif;background:#fff;color:var(--ink);line-height:1.6;font-size:15px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+a{color:var(--link)}
+.top{border-bottom:1px solid var(--line);padding:12px 0;position:sticky;top:0;background:#fff;z-index:10}
+.top .wrap{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.top b{font-size:15px}.top .sub{font-size:13px;color:var(--mut)}
+.top .jump{margin-left:auto;font-size:13px}.top .jump a{margin-left:10px;text-decoration:none}
+.intro{padding:26px 0 6px}
+.intro h1{font-size:26px;font-weight:800;margin-bottom:10px}
+.intro p{color:#333;font-size:14.5px;margin-bottom:10px}
+.lock{border:1px solid var(--line);border-left:3px solid #999;background:#fafafa;padding:12px 15px;font-size:13.5px;color:#333;margin:12px 0}
+.lock b{color:#1f1f1f}
+.panel{margin:30px 0;border:1px solid #cfcfcf;border-radius:7px;overflow:hidden}
+.phead{padding:20px 20px 18px;border-bottom:1px solid var(--line);background:#f4f5f7;display:flex;gap:14px;align-items:center}
+.phead .badge{width:46px;height:46px;flex:none;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:24px;font-family:var(--latin)}
+.phead .t{font-size:27px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.phead .concept{font-size:14px;color:#444;margin-top:4px}
+.phead .scale{font-size:13px;color:#1f6f3e;margin-top:5px}
+.sec{padding:16px 20px;border-bottom:1px solid #eee}.sec:last-child{border-bottom:none}
+.seclabel{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#999;margin-bottom:10px}
+.prevwarn{display:flex;gap:9px;align-items:center;background:#fff7e6;border:1px solid #f0d28a;border-radius:6px;padding:11px 14px;margin-bottom:12px}
+.prevwarn .ic{font-size:18px}
+.prevwarn .tx{font-size:15px;font-weight:800;color:#8a5a00}
+.prevwarn .tx small{display:block;font-size:12px;font-weight:600;color:#a07b2a;margin-top:1px}
+.refs{background:#f3f6ff;border:1px solid #cfdaf7;border-radius:6px;padding:14px 16px}
+.refs .h{font-size:16px;font-weight:800;color:#1f2b66;margin-bottom:3px}
+.refs .hint{font-size:12.5px;color:#5b6488;margin-bottom:10px}
+.refrow{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid #dbe3f7}
+.refrow:first-of-type{border-top:none}
+.refrow .nm{font-weight:700;min-width:150px;font-size:14px}
+.refrow .pt{flex:1;font-size:13px;color:#444}.refrow .pt .warn{color:#b4332b;font-weight:600}
+.refrow .go{white-space:nowrap;font-size:12.5px;font-weight:700;text-decoration:none;border:1px solid #2b50d8;color:#2b50d8;border-radius:4px;padding:4px 9px}
+.refrow .go:hover{background:#2b50d8;color:#fff}
+.tl{font-size:13.5px;color:#333;margin-bottom:5px}.tl b{color:#1f1f1f}
+.pc{font-size:13.5px;color:#333}.pc li{margin:3px 0 3px 16px}
+.pc .pro::marker{content:"+ "}.pc .con::marker{content:"– "}
+/* 톤 미리보기 */
+.mock{border:1px solid #ddd;border-radius:5px;overflow:hidden;font-size:12px}
+.mock .nav{display:flex;gap:12px;align-items:center;padding:9px 13px;border-bottom:1px solid #e3e3e3;font-size:11px}
+.mock .nav .logo{font-weight:800;font-family:var(--latin)}.mock .nav .sp{margin-left:auto}
+.mock .nav .buy{border:1px solid currentColor;border-radius:3px;padding:3px 9px;font-weight:700}
+.mock .hero{padding:24px 16px}
+.mock .hero .ey{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--latin)}
+.mock .hero h3{font-size:24px;font-weight:800;line-height:1.12;margin:6px 0}
+.mock .hero p{font-size:12px;opacity:.85;max-width:360px}
+.mock .hero .b{margin-top:12px;display:flex;gap:7px}
+.mock .hero .b span{font-size:11px;font-weight:700;border-radius:3px;padding:6px 10px;border:1px solid transparent}
+.mock .row{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:13px}
+.mock .cd{border:1px solid #ddd;border-radius:4px;background:#fff;overflow:hidden}
+.mock .cd .im{height:54px;display:grid;place-items:center;font-size:9px;color:#9a9a9a;background:#eee}
+.mock .cd .cc{padding:8px 9px}.mock .cd .cc b{font-size:12px}.mock .cd .cc .p{font-size:11px;font-weight:700;margin-top:2px}
+.mock .st{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 13px 13px}
+.mock .st .stbox{background:#fff;border:1px solid #e3e3e3;border-radius:4px;padding:9px 4px;text-align:center;font-size:9px;color:#888}
+.mock .st .stbox b{display:block;font-size:16px;color:inherit;font-family:var(--latin)}
+.mock .nb{padding:14px 13px;border-top:1px solid #e3e3e3;font-size:11px}.mock .nb b{font-size:14px}
+.mock .nb .tag{display:inline-block;font-size:9px;opacity:.7;margin-top:5px}
+
+/* A 에어리 에디토리얼 (밝은 매거진 + 일부 다크 믹스) */
+.mk-A{background:#fbfaf7;color:#1f2540}
+.mk-A .nav{background:#fbfaf7;border-color:#e9e6dd}
+.mk-A .hero{background:#dee3ef;color:#1f2540}.mk-A .hero h3{font-size:27px}
+.mk-A .hero .ey{color:#2b50d8}
+.mk-A .hero .b .pri{background:#1f2540;color:#fff}.mk-A .hero .b .ln{color:#1f2540;border-color:#1f254055}
+.mk-A .cd .im{background:#e3e6ef;color:#9aa3bd}.mk-A .cd .cc .p{color:#1f2540}
+.mk-A .nb{background:#14182e;color:#fff;border-color:#14182e}/* 다크 섹션 믹스 */
+.mk-A .nb b{color:#fff}.mk-A .nb .tag{color:#aeb6e0}
+
+/* B 미니멀 (밝은 뉴트럴, 절제) */
+.mk-B{background:#fff;color:#1f2735}
+.mk-B .nav{background:#fff}.mk-B .hero{background:#f4f6f9;color:#1f2735}
+.mk-B .hero .ey{color:#2b50d8}
+.mk-B .hero .b .pri{background:#1f2735;color:#fff}.mk-B .hero .b .ln{color:#1f2735;border-color:#9aa1b3}
+.mk-B .cd .im{background:#eef0f3}.mk-B .cd .cc .p{color:#1f2735}
+.mk-B .nb{background:#fbfbfc}
+
+.foot{padding:22px 0 56px;color:#555;font-size:13.5px}.foot b{color:#1f1f1f}
+@media(max-width:640px){.refrow{flex-wrap:wrap}.refrow .nm{min-width:0}.phead .t{font-size:23px}}
+</style></head>
+<body>
+<div class="top"><div class="wrap">
+ <b>디자인 스타일 후보 비교 — 이플로우 판매 사이트</b>
+ <span class="sub">사이트 전체에 쓸 하나의 스타일을 고르는 후보 A·B</span>
+ <span class="jump"><a href="#A">A 에어리 에디토리얼</a> · <a href="#B">B 미니멀</a></span>
+</div></div>
+
+<div class="wrap"><div class="intro">
+ <h1>사이트 전체에 쓸 하나의 스타일을 고르세요</h1>
+ <div class="lock">
+  <b>고정 원칙</b> · ① 제품을 다크·브라이트로 나누지 않음(라이트/다크는 디바이스 모드). ② 다크는 <b>일부 섹션 강조</b>로만 — 사이트 전체를 다크 도미넌트로 잠그지 않음(향후 저가·대중 EFLOW 제품 입점 대비). ③ 폰트: 국문 Pretendard · 영문 Satoshi(무료). ④ 색은 못박지 않고 톤앤매너로 — 시안에서 확정. ⑤ 모든 동선의 끝은 스마트스토어 구매.
+ </div>
+</div></div>
+
+<!-- ===== A. 에어리 에디토리얼 ===== -->
+<div class="wrap"><div class="panel" id="A">
+ <div class="phead"><div class="badge" style="background:#2b50d8">A</div>
+  <div><div class="t">에어리 에디토리얼 — Airy Magazine</div>
+   <div class="concept">밝은 매거진 캔버스 · 대형 풀블리드 사진 · 시원한 그리드 · 일부 섹션 다크 믹스로 드라마</div>
+   <div class="scale">글로벌·시원한 편집 디자인 지향. 사진·영상·타이포로 임팩트, 다크는 강조 섹션에만</div></div></div>
+
+ <div class="sec">
+  <div class="prevwarn"><span class="ic">⚠</span><span class="tx">톤 미리보기 (개략) — 완성 디자인이 아닙니다<small>색·여백·타이포의 '느낌'만 참고하세요. 실제 레이아웃·디테일은 시안 단계에서 결정됩니다.</small></span></div>
+  <div class="mock mk-A">
+   <div class="nav"><span class="logo">EFLOW</span><span>자전거</span><span>전동체어</span><span>문의</span><span class="sp"></span><span class="buy">구매하기</span></div>
+   <div class="hero"><div class="ey">E-BIKE · EFLIPS SERIES</div><h3>가볍게 접고, 멀리 달린다</h3><p>대형 풀블리드 사진/영상 위에 큰 타이포. 시원한 매거진 그리드.</p><div class="b"><span class="pri">스마트스토어에서 구매하기</span><span class="ln">모델 비교하기</span></div></div>
+   <div class="row"><div class="cd"><div class="im">AIR 라이프스타일 풀블리드</div><div class="cc"><b>EFLIPS-AIR</b><div class="p">2,980,000원</div></div></div><div class="cd"><div class="im">PRO 라이프스타일 풀블리드</div><div class="cc"><b>EFLIPS-PRO</b><div class="p">3,480,000원</div></div></div></div>
+   <div class="st"><div class="stbox"><b>50~60km</b>1회 충전</div><div class="stbox"><b>75Nm</b>최대 토크</div><div class="stbox"><b>15kg대</b>초경량</div></div>
+   <div class="nb"><b>이동, 일상 안으로.</b> · 전동체어 NUBINA<span class="tag">↑ 예: 이런 강조 섹션 하나를 다크로 — 드라마틱한 대비(전체는 밝게 유지)</span></div>
+  </div>
+ </div>
+
+ <div class="sec"><div class="refs">
+  <div class="h">📌 이 시안 레퍼런스 — 무엇을 볼지</div>
+  <div class="hint">전부 실제 제품·브랜드 사이트입니다. (큐레이션 갤러리 아님)</div>
+  <div class="refrow"><span class="nm">Cowboy</span><span class="pt">풀스크린 제품 영상 + 두 줄로 쪼갠 굵은 헤드라인, 컬러웨이 전환. 밝은 섹션과 다크 드라마틱 히어로를 오가는 리듬</span><a class="go" href="https://cowboy.com/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">VanMoof S6</span><span class="pt">제품을 아이콘처럼 다루는 오버사이즈 타이포 + 큰 제품 사진의 에디토리얼 제품 페이지</span><a class="go" href="https://www.vanmoof.com/en-NL/our-rides/s6" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">Hyundai Robotics</span><span class="pt">영화적 영상 히어로 + 큰 헤드라인으로 '미래 이동' 연출. 다크·시네마틱(한국 발 대기업 톤 합의용)</span><a class="go" href="https://robotics.hyundai.com/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">Anduril</span><span class="pt">다크 풀스크린 영상 + 절제된 굵은 타이포만으로 무게감 — A의 '다크 믹스' 대표</span><a class="go" href="https://www.anduril.com/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">Rivian</span><span class="pt">풀블리드 자연 사진 + 과감히 비운 여백 그리드. 에어리·제너러스 매거진 톤의 정수</span><a class="go" href="https://rivian.com/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">ZettaJoule</span><span class="pt">딥테크 에디토리얼 — 대형 기술 렌더 히어로 + 영상 + 데이터 시각화 + 산업 사진 카드. 밝은 섹션과 산업/다크 이미지를 섞음(Zypsy 제작)</span><a class="go" href="https://zetta-joule.com/" target="_blank">열기 ↗</a></div>
+ </div></div>
+
+ <div class="sec"><div class="seclabel">톤앤매너 / 장단점</div>
+  <div class="tl"><b>컬러 톤</b> 밝은 매거진 베이스 · 색은 대형 사진/영상이 주도 · 강조 섹션에 한해 다크 대비 · 또렷한 포인트 1개</div>
+  <div class="tl"><b>타이포</b> 매거진식 초대형 헤드라인 — 영문 Satoshi · 국문 Pretendard</div>
+  <ul class="pc"><li class="pro">글로벌·임팩트 강함, 내부 선호 톤(시원한 편집·과감한 타이포·사진/영상)에 부합</li><li class="pro">다크를 강조 섹션에만 써서 프리미엄 인상과 확장성을 양립</li><li class="con">사진·영상 퀄리티에 성패가 달림 — 좋은 실사/모션 소스 확보가 선결</li></ul>
+ </div>
+</div></div>
+
+<!-- ===== B. 미니멀 ===== -->
+<div class="wrap"><div class="panel" id="B">
+ <div class="phead"><div class="badge" style="background:#5b6472">B</div>
+  <div><div class="t">미니멀 — Clean Neutral</div>
+   <div class="concept">밝은 뉴트럴 캔버스 · 넉넉한 여백 · 절제. "기술은 조용히 증명한다"</div>
+   <div class="scale">가격대 다른 제품이 섞여도 가장 무난, 접근성 자연스러움, 제작·유지 안정적</div></div></div>
+
+ <div class="sec">
+  <div class="prevwarn"><span class="ic">⚠</span><span class="tx">톤 미리보기 (개략) — 완성 디자인이 아닙니다<small>색·여백·타이포의 '느낌'만 참고하세요. 실제 레이아웃·디테일은 시안 단계에서 결정됩니다.</small></span></div>
+  <div class="mock mk-B">
+   <div class="nav"><span class="logo">EFLOW</span><span>자전거</span><span>전동체어</span><span>문의</span><span class="sp"></span><span class="buy">구매하기</span></div>
+   <div class="hero"><div class="ey">E-BIKE · EFLIPS SERIES</div><h3>가볍게 접고, 멀리 달린다</h3><p>15kg대 카본 프레임 전기자전거. 넉넉한 여백, 절제된 위계.</p><div class="b"><span class="pri">스마트스토어에서 구매하기</span><span class="ln">모델 비교하기</span></div></div>
+   <div class="row"><div class="cd"><div class="im">EFLIPS-AIR 제품컷</div><div class="cc"><b>EFLIPS-AIR</b><div class="p">2,980,000원</div></div></div><div class="cd"><div class="im">EFLIPS-PRO 제품컷</div><div class="cc"><b>EFLIPS-PRO</b><div class="p">3,480,000원</div></div></div></div>
+   <div class="st"><div class="stbox"><b>50~60km</b>1회 충전</div><div class="stbox"><b>75Nm</b>최대 토크</div><div class="stbox"><b>15kg대</b>초경량</div></div>
+   <div class="nb"><b>이동, 일상 안으로.</b> · 전동체어 NUBINA — 같은 시스템, 같은 톤</div>
+  </div>
+ </div>
+
+ <div class="sec"><div class="refs">
+  <div class="h">📌 이 시안 레퍼런스 — 무엇을 볼지</div>
+  <div class="hint">전부 실제 제품·브랜드 사이트입니다. (큐레이션 갤러리 아님)</div>
+  <div class="refrow"><span class="nm">Figure</span><span class="pt">풀스크린 제품 영상 히어로지만 카피는 한 줄 — 군더더기 없는 절제, 제품 움직임으로 설득</span><a class="go" href="https://www.figure.ai/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">1X Technologies</span><span class="pt">모노톤·넉넉한 여백·라벨형 타이포의 '조용한 첨단'. 컬러를 거의 안 씀</span><a class="go" href="https://www.1x.tech/" target="_blank">열기 ↗</a></div>
+  <div class="refrow"><span class="nm">Unagi</span><span class="pt">밝고 깔끔한 커머스 — 흰 배경에 제품 영상 + 핵심 스펙(주행거리·속도·출력) 콜아웃. 접근성 좋은 라이트 톤</span><a class="go" href="https://unagiscooters.com/" target="_blank">열기 ↗</a></div>
+ </div></div>
+
+ <div class="sec"><div class="seclabel">톤앤매너 / 장단점</div>
+  <div class="tl"><b>컬러 톤</b> 거의 화이트에 가까운 밝은 뉴트럴 · 짙은 뉴트럴 잉크 · 또렷한 포인트 1개</div>
+  <div class="tl"><b>타이포</b> 영문 Satoshi · 국문 Pretendard, 큼직하되 클린</div>
+  <ul class="pc"><li class="pro">접근성·가독성 자연스럽고 제품 다양화(가격대 혼재)에 강함</li><li class="pro">사진 의존도 낮아 제작·일정·유지가 안정적</li><li class="con">시네마틱 '와우'는 약함 — 타이포·여백·디테일로 완성도를 끌어올려야</li></ul>
+ </div>
+</div></div>
+
+<div class="wrap"><div class="foot">
+ <b>다음 단계</b> · 후보 하나를 정하면 → 토큰·컴포넌트·화면 적용 기준 1장으로 정리합니다. 색은 그 단계에서 톤앤매너 기준으로 좁혀 확정합니다.
+</div></div>
+</body></html>
